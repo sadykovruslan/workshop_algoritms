@@ -14,10 +14,8 @@ public class sortVoids {
                 }
             }
         }
-//        System.out.println(Arrays.toString(arr));
         long finish = System.currentTimeMillis();
-        long result = finish - start;
-        System.out.println("Lead time of bubbleSort is: " + result);
+        System.out.println("Lead time of bubbleSort is: " + (finish-start) + " ms");
     }
 
     public void insertSort(int[] arr) {
@@ -31,10 +29,8 @@ public class sortVoids {
             }
             arr[j + 1] = key;
         }
-//        System.out.println(Arrays.toString(arr));
         long finish = System.currentTimeMillis();
-        long result = finish - start;
-        System.out.println("Lead time of insertSort is: " + result);
+        System.out.println("Lead time of insertSort is: " + (finish-start) + " ms");
     }
 
     public void selectSort(int[] arr){
@@ -52,10 +48,15 @@ public class sortVoids {
                 arr[minElrmentIndex] = temp;
             }
        }
-//        System.out.println(Arrays.toString(arr));
         long finish = System.currentTimeMillis();
-        long result = finish - start;
-        System.out.println("Lead time of selectSort is: " + result);
+        System.out.println("Lead time of selectSort is: " + (finish-start) + " ms");
+    }
+
+    public void standardSortVoidFromJava(int[] arr){
+        long start = System.currentTimeMillis();
+        Arrays.sort(arr);
+        long finish = System.currentTimeMillis();
+        System.out.println("Lead time of standard Java void is " + (finish-start) + " ms");
     }
 
     public int[] genArray(){
@@ -63,7 +64,6 @@ public class sortVoids {
         int[] arr = new int[arrLength];
         for(int i = 0; i < arrLength; i++){
             arr[i] = new Random().nextInt(1_000_000_000);
-
         }
         return arr;
     }
